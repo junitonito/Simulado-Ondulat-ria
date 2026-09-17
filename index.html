@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado de Ondulatória</title>
+<style>
+:root {
+  --bg:#f3f5f8; --card:#fff; --text:#1f2937; --muted:#6b7280;
+  --border:#d9dee7; --accent:#2563eb; --good:#15803d; --bad:#b91c1c;
+}
+* { box-sizing:border-box; }
+body { margin:0; background:var(--bg); color:var(--text);
+  font-family:Arial,Helvetica,sans-serif; line-height:1.55; }
+.container { max-width:900px; margin:0 auto; padding:28px 18px 50px; }
+header,.question,#result {
+  background:var(--card); border:1px solid var(--border); border-radius:16px;
+  box-shadow:0 2px 10px rgba(0,0,0,.04);
+}
+header { padding:28px; margin-bottom:18px; }
+h1 { margin:0 0 8px; font-size:30px; }
+.subtitle { color:var(--muted); margin:0; }
+.info { display:flex; gap:10px; flex-wrap:wrap; margin-top:18px; }
+.badge { background:#eef2ff; color:#3730a3; padding:7px 11px;
+  border-radius:999px; font-size:14px; font-weight:bold; }
+.question { padding:22px; margin:16px 0; }
+.qtitle { font-size:19px; font-weight:700; margin-bottom:12px; }
+.stem { margin-top:0; white-space:normal; }
+.option {
+  display:flex; gap:10px; align-items:flex-start; padding:13px 14px;
+  border:1px solid var(--border); border-radius:10px; margin:9px 0;
+  cursor:pointer; transition:.15s; user-select:none;
+}
+.option:hover { border-color:var(--accent); background:#f8fbff; }
+.option:has(input:checked) { border-color:var(--accent); background:#eef5ff; }
+.option input {
+  margin-top:5px; width:18px; height:18px; flex:0 0 auto;
+  accent-color:var(--accent); cursor:pointer;
+}
+.option span { flex:1; }
+.actions { text-align:center; margin-top:24px; }
+button {
+  border:0; background:var(--accent); color:#fff; font-size:17px;
+  font-weight:bold; padding:14px 26px; border-radius:10px; cursor:pointer;
+}
+button:hover { filter:brightness(.94); }
+button.secondary { background:#6b7280; margin-left:8px; }
+#result {
+  display:none; padding:22px; margin-top:20px;
+}
+.good { color:var(--good); }
+.bad { color:var(--bad); }
+.review { margin-top:14px; padding-top:14px; border-top:1px solid var(--border); }
+.review div { margin:7px 0; }
+footer { color:var(--muted); text-align:center; margin-top:25px; font-size:13px; }
+
+.question-figure {
+  display:block;
+  width:min(100%, 620px);
+  height:auto;
+  margin:18px auto 20px;
+  border:1px solid #e5e7eb;
+  border-radius:10px;
+  background:#fff;
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+<header>
+  <h1>Simulado de Ondulatória</h1>
+  <p class="subtitle">Marque uma alternativa em cada questão e finalize o teste.</p>
+  <div class="info">
+    <span class="badge">9 questões</span>
+    <span class="badge">Múltipla escolha</span>
+    <span class="badge">Correção automática</span>
+  </div>
+</header>
+
+<form id="quiz">
+
+<section class="question">
+  <div class="qtitle">Questão 1</div>
+  <p class="stem">Em um dia de praia, uma pessoa pode permanecer várias horas exposta ao Sol. Mesmo sem perceber imediatamente, essa exposição pode provocar alterações na pele, como vermelhidão, ardência e, em casos mais intensos, queimaduras. Esses efeitos estão relacionados às características das diferentes regiões do espectro eletromagnético. A situação descrita está principalmente relacionada a qual região do espectro eletromagnético?</p>
+  <div class="options">
+    <label class="option" for="q1A"><input id="q1A" type="radio" name="q1" value="A"><span><strong>A)</strong> infravermelha, pois apresenta menor frequência e maior energia assim causando um aumento da temperatura da pele e por consequência queimaduras.</span></label><label class="option" for="q1B"><input id="q1B" type="radio" name="q1" value="B"><span><strong>B)</strong> visível, pois possui energia suficiente para estimular as células responsáveis pela percepção das cores.</span></label><label class="option" for="q1C"><input id="q1C" type="radio" name="q1" value="C"><span><strong>C)</strong> ultravioleta, pois apresenta frequência maior e consequentemente maior energia, podendo provocar alterações nas células da pele.</span></label><label class="option" for="q1D"><input id="q1D" type="radio" name="q1" value="D"><span><strong>D)</strong> micro-ondas, pois apresentam frequência superior à da radiação infravermelha e podem transferir energia para os tecidos.</span></label><label class="option" for="q1E"><input id="q1E" type="radio" name="q1" value="E"><span><strong>E)</strong> ondas de rádio, pois possuem baixa frequência, mas podem transportar energia por longas distâncias.</span></label>
+  </div>
+</section>
+<section class="question">
+  <div class="qtitle">Questão 2</div>
+  <p class="stem">Em determinados procedimentos médicos, o uso de lasers permite realizar intervenções em regiões muito pequenas do corpo, reduzindo a ação sobre tecidos que não precisam ser tratados. Para que diferentes procedimentos possam ser realizados, os equipamentos utilizados nessas aplicações podem apresentar diferentes características físicas da radiação emitida. Um laboratório está desenvolvendo um novo equipamento para uso médico e precisa modificar uma de suas características de emissão. Qual alteração deve ser realizada para aumentar a potência do feixe?</p>
+  <div class="options">
+    <label class="option" for="q2A"><input id="q2A" type="radio" name="q2" value="A"><span><strong>A)</strong> aumentar a energia de cada fóton, mantendo constante a quantidade de fótons emitidos por segundo.</span></label><label class="option" for="q2B"><input id="q2B" type="radio" name="q2" value="B"><span><strong>B)</strong> aumentar a frequência da radiação, mantendo constante a quantidade de fótons emitidos por segundo.</span></label><label class="option" for="q2C"><input id="q2C" type="radio" name="q2" value="C"><span><strong>C)</strong> aumentar a quantidade de fótons emitidos por segundo, mantendo constante a energia de cada fóton.</span></label><label class="option" for="q2D"><input id="q2D" type="radio" name="q2" value="D"><span><strong>D)</strong> diminuir a energia de cada fóton, mantendo constante a quantidade de fótons emitidos por segundo.</span></label><label class="option" for="q2E"><input id="q2E" type="radio" name="q2" value="E"><span><strong>E)</strong> diminuir a quantidade de fótons emitidos por segundo, mantendo constante a frequência.</span></label>
+  </div>
+</section>
+<section class="question">
+  <div class="qtitle">Questão 3</div>
+  <p class="stem">O monitoramento de fenômenos sísmicos em regiões oceânicas é um desafio, pois a instalação de equipamentos diretamente no fundo do mar pode ser complexa e de alto custo. Um estudo publicado em 2025 investigou o uso de veículos autônomos para registrar sinais acústicos no oceano, mostrando que esses equipamentos podem contribuir para o acompanhamento de eventos sísmicos. Além do monitoramento sísmico, sistemas acústicos são utilizados em veículos submersos para determinar a posição de obstáculos e estimar a distância até o fundo do oceano. Um equipamento emite um pulso sonoro e registra o instante em que o sinal refletido retorna ao sensor. Considere que, em determinada situação, a velocidade do som na água seja de 1 500 m/s . O equipamento emite um pulso e recebe seu eco 0,80 s depois. Além disso, o sistema apresenta um atraso eletrônico de 0,10 s entre a chegada do sinal ao sensor e o registro do retorno. Desprezando outros efeitos, a distância entre o equipamento e a superfície que refletiu o pulso é, aproximadamente,</p>
+  <div class="options">
+    <label class="option" for="q3A"><input id="q3A" type="radio" name="q3" value="A"><span><strong>A)</strong> 450 m</span></label><label class="option" for="q3B"><input id="q3B" type="radio" name="q3" value="B"><span><strong>B)</strong> 525 m</span></label><label class="option" for="q3C"><input id="q3C" type="radio" name="q3" value="C"><span><strong>C)</strong> 600 m</span></label><label class="option" for="q3D"><input id="q3D" type="radio" name="q3" value="D"><span><strong>D)</strong> 675 m</span></label><label class="option" for="q3E"><input id="q3E" type="radio" name="q3" value="E"><span><strong>E)</strong> 750 m</span></label>
+  </div>
+</section>
+<section class="question">
+  <div class="qtitle">Questão 4</div>
+  <p class="stem">O processo de interpretação de imagens capturadas por sensores instalados a bordo de satélites que imageiam determinadas faixas ou bandas do espectro de radiação eletromagnética (REM) baseia-se na interação dessa radiação com os objetos presentes sobre a superfície terrestre. Uma das formas de avaliar essa interação é por meio da quantidade de energia e por meio da quantidade de energia refletida pelos objetos. A relação entre a reflectância de um dado objeto e o comprimento de onda da REM é conhecida como curva de comportamento espectral ou assinatura espectral do objeto, como mostrado na figura, para objetos comuns na superfície terrestre. De acordo com as curvas de assinatura espectral apresentadas na figura, para que se obtenha a melhor discriminação dos alvos mostrados, convém selecionar a banda correspondente a que comprimento de onda em micrômetros (μ m)?</p>
+<img class="question-figure" src="./imagens/q4.png" alt="Gráfico de assinatura espectral apresentado na questão 4">
+  <div class="options">
+    <label class="option" for="q4A"><input id="q4A" type="radio" name="q4" value="A"><span><strong>A)</strong> 0,4 a 0,5.</span></label><label class="option" for="q4B"><input id="q4B" type="radio" name="q4" value="B"><span><strong>B)</strong> 0,5 a 0,6.</span></label><label class="option" for="q4C"><input id="q4C" type="radio" name="q4" value="C"><span><strong>C)</strong> 0,6 a 0,7.</span></label><label class="option" for="q4D"><input id="q4D" type="radio" name="q4" value="D"><span><strong>D)</strong> 0,7 a 0,8.</span></label><label class="option" for="q4E"><input id="q4E" type="radio" name="q4" value="E"><span><strong>E)</strong> 0,8 a 0,9.</span></label>
+  </div>
+</section>
+<section class="question">
+  <div class="qtitle">Questão 5</div>
+  <p class="stem">A costa do Chile está localizada em uma região de intensa atividade sísmica. Em 2026, novos tremores registrados no país reforçaram a importância do monitoramento de fenômenos que podem afetar áreas costeiras. Quando um terremoto ocorre no fundo do oceano e provoca o deslocamento de uma grande quantidade de água, ondas podem se propagar por longas distâncias, sendo acompanhadas por sistemas de alerta. Considere uma situação hipotética em que um desses eventos origine ondas com comprimento de onda de 200 km , que se propagam em uma região do oceano cuja profundidade é de 4 km . Para ondas desse tipo, em que o comprimento de onda é muito maior que a profundidade da água, sua velocidade de propagação pode ser aproximada por: em que g=10 m/s² é a aceleração da 𝑣 = 𝑔𝑑gravidade e d é a profundidade da água. Sabendo-se que o fenômeno consiste em uma série de ondas sucessivas, qual é o valor mais próximo do intervalo de tempo entre duas ondas consecutivas?</p>
+  <div class="options">
+    <label class="option" for="q5A"><input id="q5A" type="radio" name="q5" value="A"><span><strong>A)</strong> 1 min</span></label><label class="option" for="q5B"><input id="q5B" type="radio" name="q5" value="B"><span><strong>B)</strong> 3,6 min</span></label><label class="option" for="q5C"><input id="q5C" type="radio" name="q5" value="C"><span><strong>C)</strong> 17 min</span></label><label class="option" for="q5D"><input id="q5D" type="radio" name="q5" value="D"><span><strong>D)</strong> 60 min</span></label><label class="option" for="q5E"><input id="q5E" type="radio" name="q5" value="E"><span><strong>E)</strong> 2160 min</span></label>
+  </div>
+</section>
+<section class="question">
+  <div class="qtitle">Questão 6</div>
+  <p class="stem">A terapia fotodinâmica é um tratamento que utiliza luz para cura de câncer através da excitação de moléculas medicamentosas, que promovem a desestruturação das células tumorais. Para a eficácia do tratamento, é necessária a iluminação na região do tecido a ser tratado. Em geral, as moléculas medicamentosas absorvem as frequências mais altas. Por isso, as intervenções cutâneas são limitadas pela penetração da luz visível, conforme a figura: A profundidade de até 2 mm em que o tratamento cutâneo é eficiente se justifica porque a luz de</p>
+<img class="question-figure" src="./imagens/q6.png" alt="Figura de profundidade de penetração da luz na pele apresentada na questão 6">
+  <div class="options">
+    <label class="option" for="q6A"><input id="q6A" type="radio" name="q6" value="A"><span><strong>A)</strong> curto comprimento de onda é mais refletida pela pele.</span></label><label class="option" for="q6B"><input id="q6B" type="radio" name="q6" value="B"><span><strong>B)</strong> maior energia é mais absorvida pelo tecido orgânico.</span></label><label class="option" for="q6C"><input id="q6C" type="radio" name="q6" value="C"><span><strong>C)</strong> menor energia é absorvida nas regiões mais profundas.</span></label><label class="option" for="q6D"><input id="q6D" type="radio" name="q6" value="D"><span><strong>D)</strong> todos os comprimentos de onda terão alta intensidade.</span></label><label class="option" for="q6E"><input id="q6E" type="radio" name="q6" value="E"><span><strong>E)</strong> cada comprimento de onda percebe um índice de refração diferente.</span></label>
+  </div>
+</section>
+<section class="question">
+  <div class="qtitle">Questão 7</div>
+  <p class="stem">Em hospitais e clínicas, a ultrassonografia é utilizada para investigar órgãos e tecidos sem o uso de radiação ionizante. O exame pode ser realizado em tempo real e também é empregado em situações nas quais é necessário localizar estruturas internas com rapidez, como na avaliação abdominal, vascular e musculoesquelética. Durante um exame, o transdutor emite pulsos de ultrassom que se propagam pelo corpo. Parte desses pulsos é refletida quando encontra uma interface entre tecidos diferentes e retorna ao transdutor. O equipamento utiliza essas informações para determinar a posição das estruturas internas. Para determinar a distância entre duas estruturas do corpo, as duas variáveis físicas imprescindíveis nesse processo são</p>
+  <div class="options">
+    <label class="option" for="q7A"><input id="q7A" type="radio" name="q7" value="A"><span><strong>A)</strong> a intensidade do som produzido pelo aparelho e a frequência desses sons.</span></label><label class="option" for="q7B"><input id="q7B" type="radio" name="q7" value="B"><span><strong>B)</strong> a quantidade de luz utilizada para gerar as imagens no aparelho e a velocidade do som nos tecidos.</span></label><label class="option" for="q7C"><input id="q7C" type="radio" name="q7" value="C"><span><strong>C)</strong> a quantidade de pulsos emitidos pelo aparelho a cada segundo e a frequência dos sons emitidos pelo aparelho.</span></label><label class="option" for="q7D"><input id="q7D" type="radio" name="q7" value="D"><span><strong>D)</strong> a velocidade do som no interior dos tecidos e o tempo entre os ecos produzidos pelas superfícies das estruturas.</span></label><label class="option" for="q7E"><input id="q7E" type="radio" name="q7" value="E"><span><strong>E)</strong> o tempo entre os ecos produzidos pelos órgãos e a quantidade de pulsos emitidos a cada segundo pelo aparelho.</span></label>
+  </div>
+</section>
+<section class="question">
+  <div class="qtitle">Questão 8</div>
+  <p class="stem">O fenômeno da levitação de corpos ocorre, na Terra, quando a força gravitacional é equilibrada, fazendo com que um objeto paire no ar. O som pode fazer objetos levitarem, fenômeno chamado de levitação acústica. Um levitador acústico deve conter um transdutor, que é uma superfície vibratória que emite o som, e um refletor. Nesse dispositivo, o transdutor fica localizado na base, enquanto o refletor é colocado acima dele, de modo que o objeto a ser levitado permaneça entre os dois. Ambos possuem superfícies côncavas para focalizar o som. Para que haja a levitação de um objeto colocado entre o transdutor e o refletor, a força que equilibra o peso do objeto deve ser decorrente da</p>
+  <div class="options">
+    <label class="option" for="q8A"><input id="q8A" type="radio" name="q8" value="A"><span><strong>A)</strong> ação mecânica direta do transdutor sobre o objeto.</span></label><label class="option" for="q8B"><input id="q8B" type="radio" name="q8" value="B"><span><strong>B)</strong> ressonância que ocorre entre a onda sonora e o objeto.</span></label><label class="option" for="q8C"><input id="q8C" type="radio" name="q8" value="C"><span><strong>C)</strong> pressão que o som emitido pelo transdutor aplica no objeto.</span></label><label class="option" for="q8D"><input id="q8D" type="radio" name="q8" value="D"><span><strong>D)</strong> interferência destrutiva do som que anula o movimento do objeto.</span></label><label class="option" for="q8E"><input id="q8E" type="radio" name="q8" value="E"><span><strong>E)</strong> diferença de pressão dos sons emitido e refletido aplicada no objeto.</span></label>
+  </div>
+</section>
+<section class="question">
+  <div class="qtitle">Questão 9</div>
+  <p class="stem">O naufrágio do Galeão Santíssimo Sacramento, ocorrido em 1668 na costa da Bahia, é considerado um importante sítio de interesse para a arqueologia subaquática brasileira. Estudos realizados no local buscam identificar e documentar estruturas, objetos e outros vestígios preservados no fundo do mar. Em uma pesquisa desse tipo, os especialistas precisam obter informações sobre materiais que se encontram abaixo da superfície da água, mesmo quando a visibilidade é insuficiente para a observação direta. Para isso, podem ser empregados equipamentos capazes de emitir sinais e analisar o retorno produzido após a interação com as estruturas submersas. Nesse contexto, o uso de sinais sonoros é mais adequado que o de sinais luminosos porque a:</p>
+  <div class="options">
+    <label class="option" for="q9A"><input id="q9A" type="radio" name="q9" value="A"><span><strong>A)</strong> propagação da luz na água ocorre a uma velocidade maior que a do som neste meio.</span></label><label class="option" for="q9B"><input id="q9B" type="radio" name="q9" value="B"><span><strong>B)</strong> absorção da luz ao longo de uma camada de água é facilitada enquanto a absorção do som não.</span></label><label class="option" for="q9C"><input id="q9C" type="radio" name="q9" value="C"><span><strong>C)</strong> refração da luz a uma grande profundidade acontece com uma intensidade menor que a do som.</span></label><label class="option" for="q9D"><input id="q9D" type="radio" name="q9" value="D"><span><strong>D)</strong> atenuação da luz nos materiais analisados é distinta da atenuação de som nestes mesmos materiais.</span></label><label class="option" for="q9E"><input id="q9E" type="radio" name="q9" value="E"><span><strong>E)</strong> reflexão da luz nas camadas de sedimento é menos intensa do que a reflexão do som neste material</span></label>
+  </div>
+</section>
+
+<div class="actions">
+  <button type="button" onclick="corrigir()">Finalizar teste</button>
+  <button type="button" class="secondary" onclick="reiniciar()">Reiniciar</button>
+</div>
+</form>
+
+<div id="result"></div>
+
+<footer>Teste gerado a partir do PDF fornecido.</footer>
+</div>
+
+<script>
+const gabarito = {"1": "C", "2": "C", "3": "B", "4": "D", "5": "C", "6": "B", "7": "D", "8": "E", "9": "B"};
+
+function corrigir() {
+  let acertos = 0, respondidas = 0, review = "";
+
+  for (const [num, correta] of Object.entries(gabarito)) {
+    const marcada = document.querySelector(`input[name="q${num}"]:checked`);
+
+    if (marcada) {
+      respondidas++;
+      if (marcada.value === correta) acertos++;
+    }
+  }
+
+  const total = Object.keys(gabarito).length;
+  const percentual = Math.round((acertos / total) * 100);
+
+  for (const [num, correta] of Object.entries(gabarito)) {
+    const marcada = document.querySelector(`input[name="q${num}"]:checked`);
+
+    if (!marcada) {
+      review += `<div>Questão ${num}: <b>não respondida</b> - correta: <b>${correta}</b></div>`;
+    } else if (marcada.value !== correta) {
+      review += `<div>Questão ${num}: sua resposta <b>${marcada.value}</b> - correta: <b>${correta}</b></div>`;
+    }
+  }
+
+  const result = document.getElementById("result");
+  result.style.display = "block";
+  result.innerHTML = `
+    <h2 class="${percentual >= 60 ? 'good' : 'bad'}">
+      ${acertos} / ${total} acertos - ${percentual}%
+    </h2>
+    <p><b>${percentual >= 60 ? 'Bom trabalho!' : 'Revise os conteúdos e tente novamente.'}</b></p>
+    <p>Respondidas: ${respondidas} | Não respondidas: ${total - respondidas}</p>
+    ${review
+      ? `<div class="review"><b>Questões para revisar:</b>${review}</div>`
+      : `<div class="review"><b>Todas as questões foram respondidas corretamente.</b></div>`}
+  `;
+
+  result.scrollIntoView({behavior:"smooth"});
+}
+
+function reiniciar() {
+  document.getElementById("quiz").reset();
+  const result = document.getElementById("result");
+  result.style.display = "none";
+  result.innerHTML = "";
+  window.scrollTo({top:0, behavior:"smooth"});
+}
+</script>
+</body>
+</html>
